@@ -13,14 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&family=Baloo+Da+2:wght@400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ফন্ট সেটআপ (গিটহাবে bangla/english ফোল্ডারের ভেতর ফাইলগুলো রাখবেন) */
+        /* আপনার আপলোড করা ফাইল অনুযায়ী ফন্ট সেটআপ */
         @font-face {
             font-family: 'DefaultBangla';
-            src: url('bangla/defaultbangla.ttf');
+            src: url('bangla/default.ttf');
         }
         @font-face {
             font-family: 'DefaultEnglish';
-            src: url('english/defaultenglish.ttf');
+            src: url('english/default.ttf');
         }
 
         :root {
@@ -127,7 +127,6 @@
     <div class="sidebar">
         <div class="control-group">
             <label>আপনার টেক্সট লিখুন</label>
-            <!-- সরাসরি টাইপ করার জন্য Placeholder ব্যবহার করা হয়েছে -->
             <textarea id="textInput" placeholder="আমাদের বাংলাদেশ🇧🇩&#10;Our Bangladesh🇧🇩"></textarea>
         </div>
 
@@ -137,16 +136,18 @@
                 <div>
                     <label style="font-size: 0.7rem; color:#888;">English</label>
                     <select id="engFont">
-                        <option value="'Caveat'">Handwriting 1</option>
-                        <option value="'DefaultEnglish'">Custom English</option>
+                        <!-- Default English Font (english/default.ttf) -->
+                        <option value="'DefaultEnglish'" selected>হাতে লেখা (Default)</option>
+                        <option value="'Caveat'">Handwriting 1 (Google)</option>
                         <option value="cursive">Classic Cursive</option>
                     </select>
                 </div>
                 <div>
                     <label style="font-size: 0.7rem; color:#888;">বাংলা</label>
                     <select id="bnFont">
-                        <option value="'Baloo Da 2'" selected>Baloo Da (ডিফল্ট)</option>
-                        <option value="'DefaultBangla'">Custom বাংলা</option>
+                        <!-- Default Bangla Font (bangla/default.ttf) -->
+                        <option value="'DefaultBangla'" selected>হাতে লেখা (Default)</option>
+                        <option value="'Baloo Da 2'">Baloo Da</option>
                         <option value="'Hind Siliguri'">Hind Siliguri</option>
                     </select>
                 </div>
@@ -206,7 +207,6 @@
 <footer>
     <div class="dev-info">
         <h2>Developer Info</h2>
-        <!-- গিটহাব রিপোজিটরিতে ছবির নাম developer.jpg দিয়ে আপলোড করবেন -->
         <img src="developer.jpg" alt="Md Osman Gani" class="dev-pic">
         <span class="dev-name">Md Osman Gani</span>
         <span class="dev-vibe">vibe cooder</span>
@@ -235,6 +235,7 @@
             val = "আমাদের বাংলাদেশ🇧🇩\nOur Bangladesh🇧🇩";
         }
         paperContent.innerText = val;
+
         paperContent.style.fontFamily = `${engFont.value}, ${bnFont.value}, sans-serif`;
         paper.style.backgroundColor = paperColor.value;
         paperContent.style.color = inkColor.value;

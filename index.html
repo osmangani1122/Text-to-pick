@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&family=Baloo+Da+2:wght@400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* আপনার আপলোড করা ফাইল অনুযায়ী ফন্ট সেটআপ */
+        /* ফন্ট সেটআপ */
         @font-face {
             font-family: 'DefaultBangla';
             src: url('bangla/default.ttf');
@@ -24,96 +24,96 @@
         }
 
         :root {
-            --primary-bg: #f8fafc;
+            --primary-bg: #f1f5f9;
             --panel-bg: #ffffff;
             --accent-color: #2563eb;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Hind Siliguri', sans-serif; background: var(--primary-bg); color: #333; }
+        body { font-family: 'Hind Siliguri', sans-serif; background: var(--primary-bg); color: #333; line-height: 1.6; }
 
-        header { background: #1e293b; color: white; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        header h1 { font-family: 'Baloo Da 2', cursive; font-size: 1.8rem; }
+        header { background: #1e293b; color: white; padding: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        header h1 { font-family: 'Baloo Da 2', cursive; font-size: 1.6rem; }
 
-        .container { max-width: 1100px; margin: 20px auto; display: grid; grid-template-columns: 380px 1fr; gap: 20px; padding: 0 15px; }
+        /* মেইন কন্টেইনার এডজাস্টমেন্ট */
+        .container { max-width: 950px; margin: 20px auto; display: grid; grid-template-columns: 320px 1fr; gap: 20px; padding: 0 15px; }
 
         /* সেটিংস প্যানেল */
-        .sidebar { background: var(--panel-bg); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); height: fit-content; }
-        .control-group { margin-bottom: 18px; }
-        label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: #444; }
+        .sidebar { background: var(--panel-bg); padding: 18px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); height: fit-content; }
+        .control-group { margin-bottom: 15px; }
+        label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: #475569; }
         
         textarea { 
-            width: 100%; height: 110px; padding: 12px; border: 1.5px solid #e2e8f0; 
-            border-radius: 10px; resize: none; font-size: 1rem; outline: none; transition: 0.3s;
+            width: 100%; height: 100px; padding: 10px; border: 1.5px solid #e2e8f0; 
+            border-radius: 8px; resize: none; font-size: 0.95rem; outline: none; transition: 0.3s;
         }
         textarea:focus { border-color: var(--accent-color); }
 
-        .row { display: flex; gap: 12px; margin-bottom: 10px; }
+        .row { display: flex; gap: 10px; margin-bottom: 8px; }
         .row div { flex: 1; }
-        select { width: 100%; padding: 10px; border: 1.5px solid #e2e8f0; border-radius: 10px; background: #fff; cursor: pointer; outline: none; }
+        select { width: 100%; padding: 8px; border: 1.5px solid #e2e8f0; border-radius: 8px; background: #fff; cursor: pointer; font-size: 0.85rem; }
 
-        /* কালার ইনপুট ডিজাইন */
         input[type="color"] {
             -webkit-appearance: none; appearance: none;
-            width: 100%; height: 42px; background-color: transparent;
-            border: 1.5px solid #e2e8f0; border-radius: 10px; cursor: pointer; padding: 4px;
+            width: 100%; height: 38px; background-color: transparent;
+            border: 1.5px solid #e2e8f0; border-radius: 8px; cursor: pointer; padding: 3px;
         }
-        input[type="color"]::-webkit-color-swatch { border-radius: 6px; border: none; }
 
-        /* প্রিভিউ এরিয়া মোবাইল ফিক্স */
-        .preview-area { background: #cbd5e1; padding: 25px 15px; border-radius: 15px; overflow: hidden; width: 100%; }
+        /* প্রিভিউ এরিয়া ও খাতার নতুন সাইজ (Small Size) */
+        .preview-area { background: #cbd5e1; padding: 20px 10px; border-radius: 12px; overflow: hidden; display: flex; justify-content: center; }
         #paper-wrapper { 
-            width: 100%; overflow-x: auto; display: flex; 
-            justify-content: flex-start; -webkit-overflow-scrolling: touch; padding-bottom: 15px;
+            width: 100%; overflow-x: auto; display: flex; justify-content: center;
         }
 
         #paper {
-            flex-shrink: 0; width: 650px; min-height: 800px;
-            background-color: #fff; padding: 50px 40px 50px 75px;
-            position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); margin: 0 auto;
+            flex-shrink: 0; 
+            width: 480px; /* প্রস্থ কমানো হয়েছে (আগে ছিল ৬৫০) */
+            min-height: 620px; /* উচ্চতা কমানো হয়েছে (আগে ছিল ৮০০) */
+            background-color: #fff; 
+            padding: 35px 25px 35px 55px; /* প্যাডিং ছোট করা হয়েছে */
+            position: relative; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+            margin: 0 auto;
         }
 
+        /* রুলড খাতার স্টাইল */
         .ruled-style {
-            background-image: linear-gradient(#c8d8e8 1px, transparent 1px);
-            background-size: 100% 35px;
+            background-image: linear-gradient(#d1dce8 1px, transparent 1px);
+            background-size: 100% 30px;
         }
         .ruled-style::before {
-            content: ''; position: absolute; left: 65px; top: 0; bottom: 0;
+            content: ''; position: absolute; 
+            left: 45px; /* লাল মার্জিন লাইনের অবস্থান ছোট খাতার জন্য এডজাস্ট */
+            top: 0; bottom: 0;
             width: 1.5px; background: #ffadad;
         }
 
-        /* প্রিভিউ টেক্সট ধরা যাবে না */
         #paper-content {
             white-space: pre-wrap; word-wrap: break-word; outline: none;
-            color: #1a237e; font-size: 22px; line-height: 35px;
+            color: #1a237e; font-size: 19px; line-height: 30px;
             user-select: none; pointer-events: none;
         }
 
         .btn-group { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 15px; }
-        .btn { padding: 12px 5px; border: none; border-radius: 10px; color: white; font-weight: bold; cursor: pointer; font-size: 0.85rem; transition: 0.3s; text-align: center; }
+        .btn { padding: 10px 5px; border: none; border-radius: 8px; color: white; font-weight: bold; cursor: pointer; font-size: 0.8rem; transition: 0.3s; text-align: center; }
         .btn-png { background: #10b981; }
         .btn-jpg { background: #f59e0b; }
         .btn-pdf { background: #ef4444; }
-        .btn:hover { opacity: 0.85; transform: translateY(-2px); }
+        .btn:hover { opacity: 0.9; transform: translateY(-1px); }
 
         /* ডেভেলপার সেকশন */
-        footer { background: #fff; padding: 40px 15px; margin-top: 40px; border-top: 1px solid #e2e8f0; text-align: center; }
-        .dev-info h2 { font-size: 1.4rem; margin-bottom: 25px; color: #1e293b; }
+        footer { background: #fff; padding: 30px 15px; margin-top: 30px; border-top: 1px solid #e2e8f0; text-align: center; }
         .dev-pic { 
-            width: 110px; height: 110px; border-radius: 50%; object-fit: cover; 
-            border: 4px solid var(--accent-color); margin: 0 auto 15px; display: block; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: #eee;
+            width: 90px; height: 90px; border-radius: 50%; object-fit: cover; 
+            border: 3px solid var(--accent-color); margin: 0 auto 12px; display: block; 
         }
-        .dev-name { font-size: 1.3rem; font-weight: bold; color: #1e293b; display: block; }
-        .dev-vibe { font-size: 0.85rem; color: #64748b; font-weight: 500; display: block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
-        .fb-icon { font-size: 2.2rem; color: #1877f2; text-decoration: none; display: inline-block; }
-        .fb-icon:hover { transform: scale(1.2); }
-        .copyright { margin-top: 30px; font-size: 0.85rem; color: #94a3b8; }
+        .dev-name { font-size: 1.1rem; font-weight: bold; color: #1e293b; display: block; }
+        .fb-icon { font-size: 2rem; color: #1877f2; text-decoration: none; margin-top: 10px; display: inline-block; }
 
         @media (max-width: 850px) {
             .container { grid-template-columns: 1fr; }
-            header { padding: 15px; }
-            .preview-area { border-radius: 0; padding: 15px 5px; }
+            #paper { width: 100%; min-width: 340px; padding-left: 45px; }
+            .ruled-style::before { left: 35px; }
         }
     </style>
 </head>
@@ -134,19 +134,17 @@
             <label>ফন্ট সিলেক্ট করুন</label>
             <div class="row">
                 <div>
-                    <label style="font-size: 0.7rem; color:#888;">English</label>
+                    <label style="font-size: 0.65rem; color:#888;">English</label>
                     <select id="engFont">
-                        <!-- Default English Font (english/default.ttf) -->
-                        <option value="'DefaultEnglish'" selected>হাতে লেখা (Default)</option>
-                        <option value="'Caveat'">Handwriting 1 (Google)</option>
-                        <option value="cursive">Classic Cursive</option>
+                        <option value="'DefaultEnglish'" selected>Default Handwriting</option>
+                        <option value="'Caveat'">Caveat</option>
+                        <option value="cursive">Cursive</option>
                     </select>
                 </div>
                 <div>
-                    <label style="font-size: 0.7rem; color:#888;">বাংলা</label>
+                    <label style="font-size: 0.65rem; color:#888;">বাংলা</label>
                     <select id="bnFont">
-                        <!-- Default Bangla Font (bangla/default.ttf) -->
-                        <option value="'DefaultBangla'" selected>হাতে লেখা (Default)</option>
+                        <option value="'DefaultBangla'" selected>ডিফল্ট হাতে লেখা</option>
                         <option value="'Baloo Da 2'">Baloo Da</option>
                         <option value="'Hind Siliguri'">Hind Siliguri</option>
                     </select>
@@ -165,27 +163,25 @@
         </div>
 
         <div class="control-group">
-            <label>খাতা ও কালির রং</label>
+            <label>কাগজ ও কালির রং</label>
             <div class="row">
                 <div>
-                    <label style="font-size: 0.7rem; color:#888;">কাগজ</label>
                     <input type="color" id="paperColor" value="#ffffff">
                 </div>
                 <div>
-                    <label style="font-size: 0.7rem; color:#888;">কালি</label>
                     <input type="color" id="inkColor" value="#1a237e">
                 </div>
             </div>
         </div>
 
         <div class="control-group">
-            <label>ফন্ট সাইজ: <span id="fs-label">22</span>px</label>
-            <input type="range" id="fontSize" min="15" max="40" value="22">
+            <label>ফন্ট সাইজ: <span id="fs-label">19</span>px</label>
+            <input type="range" id="fontSize" min="12" max="35" value="19">
         </div>
 
         <div class="control-group">
-            <label>লাইনের দূরত্ব: <span id="lh-label">35</span>px</label>
-            <input type="range" id="lineHeight" min="25" max="60" value="35">
+            <label>লাইনের দূরত্ব: <span id="lh-label">30</span>px</label>
+            <input type="range" id="lineHeight" min="20" max="50" value="30">
         </div>
 
         <div class="btn-group">
@@ -206,14 +202,12 @@
 
 <footer>
     <div class="dev-info">
-        <h2>Developer Info</h2>
         <img src="developer.jpg" alt="Md Osman Gani" class="dev-pic">
         <span class="dev-name">Md Osman Gani</span>
-        <span class="dev-vibe">vibe cooder</span>
         <a href="https://www.facebook.com/fahhh.t1xn" target="_blank" class="fb-icon">
             <i class="fab fa-facebook"></i>
         </a>
-        <p class="copyright">© 2026 osmangani.pro.bd All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 15px;">© 2026 osmangani.pro.bd</p>
     </div>
 </footer>
 
@@ -230,10 +224,7 @@
     const lineHeight = document.getElementById('lineHeight');
 
     function updatePaper() {
-        let val = textInput.value;
-        if (val === "") {
-            val = "আমাদের বাংলাদেশ🇧🇩\nOur Bangladesh🇧🇩";
-        }
+        let val = textInput.value || "আমাদের বাংলাদেশ🇧🇩\nOur Bangladesh🇧🇩";
         paperContent.innerText = val;
 
         paperContent.style.fontFamily = `${engFont.value}, ${bnFont.value}, sans-serif`;
@@ -250,7 +241,7 @@
             paper.style.backgroundSize = `100% ${lineHeight.value}px`;
         }
         if (paperType.value === 'yellow') paper.style.backgroundColor = "#fff9c4";
-        if (paperType.value === 'diary') paper.style.borderLeft = "20px solid #5d4037";
+        if (paperType.value === 'diary') paper.style.borderLeft = "15px solid #5d4037";
         else paper.style.borderLeft = "none";
     }
 
@@ -261,15 +252,7 @@
     async function download(format) {
         const canvas = await html2canvas(paper, { scale: 2, useCORS: true });
         const link = document.createElement('a');
-        if (format === 'png') {
-            link.download = 'handwriting.png';
-            link.href = canvas.toDataURL('image/png');
-            link.click();
-        } else if (format === 'jpg') {
-            link.download = 'handwriting.jpg';
-            link.href = canvas.toDataURL('image/jpeg', 0.9);
-            link.click();
-        } else if (format === 'pdf') {
+        if (format === 'pdf') {
             const { jsPDF } = window.jspdf;
             const pdf = new jsPDF('p', 'mm', 'a4');
             const imgData = canvas.toDataURL('image/jpeg', 1.0);
@@ -277,6 +260,10 @@
             const pdfH = (canvas.height * pdfW) / canvas.width;
             pdf.addImage(imgData, 'JPEG', 0, 0, pdfW, pdfH);
             pdf.save('handwriting.pdf');
+        } else {
+            link.download = `handwriting.${format}`;
+            link.href = canvas.toDataURL(`image/${format === 'png' ? 'png' : 'jpeg'}`);
+            link.click();
         }
     }
     updatePaper();
